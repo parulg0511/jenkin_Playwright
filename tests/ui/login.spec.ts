@@ -34,7 +34,7 @@ test.describe('Login Tests', () => {
           //  loginpage = new loginPage(page);
           //  await loginpage.navigate('/');
            await loginPage.navigate(process.env.BASE_URL!);
-            await loginpage.login(username,password);
+            await loginPage.login(username,password);
             //await loginPage.login(process.env.USERNAME!,process.env.PASSWORD!);
             await loginPage.expectNotUrl('dashboard');
       });
