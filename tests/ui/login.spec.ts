@@ -32,10 +32,10 @@ test.describe('Login Tests', () => {
     testData.invalidUsers.forEach(({ username, password, expected }) => {
         test(`Login test with ${username || 'empty'} credentials`, async ({ loginPage }) => {
           //  loginpage = new loginPage(page);
-           // await loginpage.navigate('/');
-            //await loginpage.login(username,password);
-            await loginPage.navigate(process.env.BASE_URL!);
-            await loginPage.login(process.env.USERNAME!,process.env.PASSWORD!);
+            await loginpage.navigate('/');
+            await loginpage.login(username,password);
+          //  await loginPage.navigate(process.env.BASE_URL!);
+            //await loginPage.login(process.env.USERNAME!,process.env.PASSWORD!);
             await loginPage.expectNotUrl('dashboard');
       });
     });
