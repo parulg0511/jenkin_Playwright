@@ -22,7 +22,7 @@ test.describe('Login Tests', () => {
        // await loginpage.navigate('/');
        // await loginpage.login(testData.validUser.username,testData.validUser.password);
        await loginPage.navigate(process.env.BASE_URL!);
-       await loginPage.login(process.env.USERNAME!,process.env.PASSWORD!);
+       await loginPage.login(process.env.CRM_USERNAME!,process.env.CRM_PASSWORD!);
         await loginPage.expectUrl('dashboard');
         await loginPage.expectHeadingVisible('Campaigns');
     });

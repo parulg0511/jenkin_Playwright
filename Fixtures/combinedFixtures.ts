@@ -30,8 +30,8 @@ export const test = base.extend<MyFixtures>({
 
     await login.navigate(process.env.BASE_URL!);
     await login.login(
-      process.env.USERNAME!,
-      process.env.PASSWORD!
+      process.env.CRM_USERNAME!,
+      process.env.CRM_PASSWORD!
     );
 
     await use();

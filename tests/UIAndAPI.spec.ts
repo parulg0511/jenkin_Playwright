@@ -1,5 +1,6 @@
 import { test, expect } from '../Fixtures/combinedFixtures';
 import { testData } from '../pages/index'; 
+import campaignConfig from '../test-data/campaignConfig.json';
 
 test('Create Campaign UI + Validate in API', async ({
   navigationPage,
@@ -13,9 +14,11 @@ test('Create Campaign UI + Validate in API', async ({
 
   await navigationPage.clickCampaign();
 
-  await campaignPage.createCampaignPage();
-  await campaignPage.formFill(testData.campaign,campaignName);
-  await campaignPage.clickSubmit();
+  // await campaignPage.createCampaignPage();
+  // await campaignPage.formFill(testData.campaign,campaignName);
+  // await campaignPage.clickSubmit();
+
+  await campaignPage.createcampaign(campaignName, "22");
   console.log("From UI "+ campaignName);
 
 
