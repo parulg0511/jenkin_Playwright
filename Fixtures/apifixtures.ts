@@ -2,9 +2,7 @@ import { test as base } from '@playwright/test';
 //import { getAPIContext } from '../utils/apiClient';
 //import { UserAPI } from '../api/UserApi';
 //import { CampaignAPI } from '../api/CampaignAPI';
-import { getAPIContext, UserAPI, CampaignAPI,InvoiceAPI } from '../pages/index'; 
-
-
+import { getAPIContext, UserAPI, CampaignAPI,InvoiceAPI, ContactApi } from '../pages/index'; 
 
 type MyFixtures = {
   apiContext: any;
@@ -13,7 +11,7 @@ type MyFixtures = {
   campaignAPI: CampaignAPI;
   invoiceAPI:InvoiceAPI;
   loginResponse: any;
-  
+  contactApi: ContactApi;
 };
 
 export const test = base.extend<MyFixtures>({
@@ -51,8 +49,12 @@ export const test = base.extend<MyFixtures>({
     const result = await authAPI.login();
     await use(result);
   },
+
+  contactApi: async ({}, use) => {
+    const apiContext = await getAPIContext();
+    await use(new ContactApi(apiContext));
+  }
+
 });
-
-
 
 export { expect } from '@playwright/test';

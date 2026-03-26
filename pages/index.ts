@@ -16,3 +16,9 @@ export { InvoiceAPI } from '../api/InvoiceAPI';
 
 export { getAPIContext } from '../utils/apiClient';
 
+
+export { ContactPage } from './contact/ContactPage';
+export { CreateContactPage } from './contact/CreateContactPage';
+
+export { ContactPageFactory } from '../pageFactory/ContactPageFactory';
+export { ContactApi } from '../api/ContactApi';
